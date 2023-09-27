@@ -1,0 +1,21 @@
+2023/09/27-11:28:37.509 3b00 Reusing MANIFEST C:\Users\vitor\Documents\GitHub\Meu-Monstrinho\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2023/09/27-11:28:37.510 3b00 Recovering log #15
+2023/09/27-11:28:37.724 3b00 Reusing old log C:\Users\vitor\Documents\GitHub\Meu-Monstrinho\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000015.log 
+2023/09/27-11:29:04.412 2704 Level-0 table #20: started
+2023/09/27-11:29:04.464 2704 Level-0 table #20: 1064017 bytes OK
+2023/09/27-11:29:04.467 2704 Delete type=0 #15
+2023/09/27-11:29:11.573 3b00 Compacting 1@1 + 1@2 files
+2023/09/27-11:29:12.103 3b00 Generated table #21@1: 35768 keys, 1425203 bytes
+2023/09/27-11:29:12.103 3b00 Compacted 1@1 + 1@2 files => 1425203 bytes
+2023/09/27-11:29:12.105 3b00 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/09/27-13:54:34.921 16ec Level-0 table #23: started
+2023/09/27-13:54:34.979 16ec Level-0 table #23: 1261880 bytes OK
+2023/09/27-13:54:34.982 16ec Delete type=2 #17
+2023/09/27-13:54:34.982 16ec Delete type=0 #19
+2023/09/27-13:54:34.983 16ec Delete type=2 #20
+2023/09/27-13:54:36.737 3dd8 Compacting 1@1 + 1@2 files
+2023/09/27-13:54:36.889 3dd8 Generated table #24@1: 44287 keys, 1736795 bytes
+2023/09/27-13:54:36.890 3dd8 Compacted 1@1 + 1@2 files => 1736795 bytes
+2023/09/27-13:54:36.890 3dd8 compacted to: files[ 0 0 1 0 0 0 0 ]
+2023/09/27-13:54:36.891 3dd8 Delete type=2 #21
+2023/09/27-13:54:36.892 3dd8 Delete type=2 #23

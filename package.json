@@ -1,0 +1,27 @@
+{
+  "name": "meu-monstrinho",
+  "version": "1.0.0",
+  "description": "Códigos  teste de uma API do WhatsApp",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VitorAlvess/Meu-Monstrinho.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VitorAlvess/Meu-Monstrinho/issues"
+  },
+  "homepage": "https://github.com/VitorAlvess/Meu-Monstrinho#readme",
+  "dependencies": {
+    "chatgpt": "^5.2.5",
+    "dotenv": "^16.3.1",
+    "openai": "^4.10.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.22.2-alpha.1"
+  }
+}
