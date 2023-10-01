@@ -18,8 +18,11 @@
   },
   "homepage": "https://github.com/VitorAlvess/Meu-Monstrinho#readme",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "chatgpt": "^5.2.5",
     "dotenv": "^16.3.1",
+    "fs": "^0.0.1-security",
+    "googleapis": "^105.0.0",
     "openai": "^4.10.0",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.22.2-alpha.1"
