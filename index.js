@@ -2,10 +2,11 @@ import { ChatGPTUnofficialProxyAPI } from 'chatgpt'
 import dotenv from 'dotenv'
 import qrcode from 'qrcode-terminal';
 import fs from 'fs';
+import path from 'path'
 import pkg from 'whatsapp-web.js';
 dotenv.config()
-const { Client, LocalAuth } = pkg;
-const client = new Client({
+const { Client, LocalAuth, MessageMedia } = pkg;
+const client = new Client({ 
     authStrategy: new LocalAuth()
 });
 
@@ -28,13 +29,63 @@ client.on('message', async message => {
   const phoneNumber = message.from.replaceAll('@c.us', '');
   
   console.log(message.body);
-  if (message.hasMedia) {
+  if (message.body == '!help'){
+    client.sendMessage(message.from, 'Atualmente possuo esses comandos: ')
+  }
+  else if (message.hasMedia) {
     const media = await message.downloadMedia();
     const folder = process.cwd() + '/img/' + phoneNumber
     const filename = folder + '/' + time + '_' + message.id.id + '.' + media.mimetype.split('/')[1];
     fs.mkdirSync(folder, { recursive: true });
     fs.writeFileSync(filename, Buffer.from(media.data, 'base64').toString('binary'), 'binary');
     console.log(`Imagem do Numero: ${phoneNumber} salva`)
+  }
+  else if(message.body == '!arquivo'){
+    const folderPath = `./img/${phoneNumber}`; // Substitua pelo caminho da sua pasta
+
+  
+    fs.readdir(folderPath, (err, files) => {
+      if (err) {
+        console.error('Erro ao ler a pasta:', err);
+        return;
+      }
+
+      // Filtra apenas os nomes de arquivos (ignora subpastas)
+      const fileNames = files.filter((file) => {
+        return fs.statSync(path.join(folderPath, file)).isFile();
+      });
+
+   
+      client.sendMessage(message.from, `Você possui um total de ${fileNames.length} arquivos salvos na minha memória`)
+     
+      
+    });
+  }
+  else if(message.body === '!arquivos'){
+
+    const folderPath = `./img/${phoneNumber}`; // Substitua pelo caminho da sua pasta
+
+  
+    fs.readdir(folderPath, (err, files) => {
+      if (err) {
+        console.error('Erro ao ler a pasta:', err);
+        return;
+      }
+
+      // Filtra apenas os nomes de arquivos (ignora subpastas)
+      const fileNames = files.filter((file) => {
+        return fs.statSync(path.join(folderPath, file)).isFile();
+      });
+
+      // Agora, fileNames contém um array com os nomes dos arquivos na pasta
+      console.log('Nomes dos arquivos na pasta:');
+      fileNames.forEach((fileName) => {
+        const media = MessageMedia.fromFilePath(`${folderPath}/${fileName}`); // Caminho para a imagem
+        client.sendMessage(message.from, media, { caption: '' });
+        console.log(fileName);
+      });
+    });
+
   }
 	else{
 
